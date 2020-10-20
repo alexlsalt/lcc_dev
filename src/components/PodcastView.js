@@ -1,33 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./View.css";
 
-export default class PodcastView extends React.Component {
-  state = {
-    episodes: []
-  };
+export default function PodcastView() {
+  const [episodes, setEpisodes] = useState([]);
 
-  componentDidMount() {
-    fetch(
-      `https://www.buzzsprout.com/api/1184462/episodes.json?api_token=${process.env.REACT_APP_ACCESS_KEY}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        json.forEach((el) => this.setState({
-          episodes: [...this.state.episodes,
-          el]
-        }));
-        console.log(this.state.episodes);
-      });
-  }
+  fetch(
+    `https://www.buzzsprout.com/api/1184462/episodes.json?api_token=${process.env.REACT_APP_ACCESS_KEY}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      let list = [];
+      json.forEach((el) => list.push(el));
+      setEpisodes(list);
+    });
 
-  render() {
     return (
       <div className="view-section">
         <h1 className="page-title">The Ladies Code Collective Podcast</h1>
-        <EpisodeContainer episodes={this.state.episodes} />
+        <EpisodeContainer episodes={episodes} />
       </div>
     );
-  }
 }
 
 function EpisodeContainer({ episodes }) {
