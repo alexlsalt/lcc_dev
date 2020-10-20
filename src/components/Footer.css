@@ -1,0 +1,17 @@
+/* FOOTER */
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding: 1rem;
+  background: #feef34;
+  font-size: 1.2em;
+}
+
+.footer-content {
+  color: #545863;
+  padding: 0.2rem;
+}

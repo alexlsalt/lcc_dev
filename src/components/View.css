@@ -1,0 +1,62 @@
+/* Styles for HomeView, PodcastView, CohortView */
+
+.view-section {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  text-align: center;
+}
+
+/* HOME VIEW */
+
+.home_image {
+  max-width: 90%;
+}
+
+.headline {
+  text-align: center;
+  width: 75%;
+  color: gray;
+}
+
+@media only screen and (max-width: 325px) {
+  .headline {
+    font-size: 1.2rem;
+  }
+}
+
+/* PODCAST VIEW */
+
+.episode-container {
+  width: 70%;
+  border: 1px solid gray;
+  margin-bottom: 1rem;
+}
+
+.episode {
+  border: 1px solid lightgray;
+  margin: 0.5rem;
+}
+
+.episode-title {
+  text-align: center;
+}
+
+.episode-description {
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+
+/* COHORT VIEW */
+
+.cohort {
+  height: 35rem;
+}
+
+
