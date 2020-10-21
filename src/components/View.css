@@ -32,14 +32,17 @@
 /* PODCAST VIEW */
 
 .episode-container {
-  width: 70%;
-  border: 1px solid gray;
+  width: 80%;
   margin-bottom: 1rem;
 }
 
+.episode-container li {
+  list-style: square;
+  
+}
+
 .episode {
-  border: 1px solid lightgray;
-  margin: 0.5rem;
+  margin: 0 auto;
 }
 
 .episode-title {
@@ -47,9 +50,10 @@
 }
 
 .episode-description {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
 }
+
 
 
 

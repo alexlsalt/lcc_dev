@@ -3,9 +3,10 @@ import "./View.css";
 
 export default function PodcastView() {
   const [episodes, setEpisodes] = useState([]);
+  const key = process.env.REACT_APP_ACCESS_KEY;
 
   fetch(
-    `https://www.buzzsprout.com/api/1184462/episodes.json?api_token=${process.env.REACT_APP_ACCESS_KEY}`
+    `https://www.buzzsprout.com/api/1184462/episodes.json?api_token=${key}`
   )
     .then((res) => res.json())
     .then((json) => {
@@ -37,9 +38,16 @@ function EpisodeContainer({ episodes }) {
 }
 
 function Episode({ episode }) {
+  let episodeStr = episode.description.replace(/(<([^>]+)>)/gi, ' ');
+  episodeStr.replace('Q&amp;A', 'Q&A');
+
+  let episodeDescription = episodeStr.split('.');
+  episodeDescription.splice(2).join('.');
+
   return (
     <div className="episode">
       <h2 className="episode-title">{episode.title}</h2>
+      <p className='episode-description'>{episodeDescription + '...'}</p>
       
     </div>
   );
