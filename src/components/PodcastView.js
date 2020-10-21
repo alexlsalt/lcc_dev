@@ -7,8 +7,7 @@ export default class PodcastView extends React.Component {
   }
 
   componentDidMount() {
-    const key = process.env.REACT_APP_ACCESS_KEY;
-
+  let key = process.env.REACT_APP_ACCESS_KEY;
   fetch(
     `https://www.buzzsprout.com/api/1184462/episodes.json?api_token=${key}`
   )
